@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'slavkoshell-frontend'
+    static_configs:
+      - targets: ['frontend:8080']
+    metrics_path: /health # Note: This is a basic health check, not a full /metrics endpoint
